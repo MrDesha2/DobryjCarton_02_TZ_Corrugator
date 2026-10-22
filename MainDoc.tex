@@ -1,0 +1,56 @@
+\input{head.tex}
+\def \notincludehead{}
+
+\input{names}
+
+
+%  Вариант сборки отчета 
+%  1 - полная
+%  0 - сокращенная
+% В тексте вставить условие
+%  \ifnum\curversion=1  % 1 - полная версия ТЗ
+%  \input{....}
+%  \fi
+\newcommand{\curversion}{1} 
+
+
+
+%\newcommand*{\No}{\textnumero}
+\begin{document}
+   % \include{Terms}
+
+    % титульный лист 
+   \maketitle
+ 	
+   \input{change_eskd.tex}
+	% содержание ЕСКД
+% 	\input{contents_eskd.tex}
+%  	\newpage
+
+	% оглавление 
+	\scriptsize
+	\setcounter{tocdepth}{4}
+	\tableofcontents
+	\normalsize
+	\newpage
+
+	% документ
+    \section{Общие положения}
+	\input{00_Preface/Preface.tex}
+    \newpage
+
+	\section{Назначение и цели создания системы}
+	\input{00_Preface/goals.tex}
+    \newpage
+
+	\section{Характеристика объекта автоматизации}
+	\input{00_Preface/chara.tex}
+    \newpage
+
+% Общие требования
+    %\input{main_requirement}
+
+	% перечень модулей системы и их характеристики
+    \input{10_Modules/Modules.tex}
+
+\end{document}
